@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var usermsg = require('../models/usermsg')
+var {UserMsg} = require('../models/usermsg')
 /* GET users listing. */
 router.get('/msg', function(req, res, next) {
   let datas={
@@ -10,7 +10,7 @@ router.get('/msg', function(req, res, next) {
   }
   // let info = new usermsg(datas)
   // info.save();//存数据
-  usermsg.find({},{password:0},(err,data)=>{//查数据
+  UserMsg.find({},{password:0},(err,data)=>{//查数据
     if(err){
       console.log('11'+err)
     }
@@ -20,7 +20,7 @@ router.get('/msg', function(req, res, next) {
     }
   })
   // usermsg.findByIdAndUpdate()//更新数据
-  usermsg.remove({username:'mickey'},(err,doc)=>{
+  UserMsg.remove({username:'mickey'},(err,doc)=>{
     console.log('remove',err,doc);//{n:删除条目数,ok:1}
   })//删除数据
   // res.json({msg:'first!!!!'})

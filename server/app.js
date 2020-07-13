@@ -5,20 +5,19 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
-
+// var fs = require('fs');
 // var server = require('http').createServer(app)
 // var io = require('socket.io')(server)
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 //中间件,顺序执行
-//解决跨域
+//解决跨域,cors
 app.all('*', function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "X-Requested-With,Content-Type");

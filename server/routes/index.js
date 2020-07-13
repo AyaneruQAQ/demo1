@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var md5 = require('md5-node')//加密密码
-const {UserMsg} = require('../models/usermsg')
+const {UserMsg,ChatModel} = require('../models/usermsg')
 const filter = {password:0,__v:0}//过滤，键值设置为0表示不显示该项，非0（一般为1）显示
 /* GET home page. */
 
@@ -46,5 +46,8 @@ router.post('/login',function(req,res){
     }
   })
 })
+
+
+
 
 module.exports = router;
