@@ -101,12 +101,12 @@ class App extends React.Component {
 
         <InnerComponent ref={this.myref}/>
 
-        <div >{this.state.msg}</div>
+        {/* <div >{this.state.msg}</div>
         <div id='test'></div>
         <button onClick={this.get_msg}>点我</button>
         <button onClick={() => {//原生js也可以在react中操作dom
           document.getElementById('test').innerHTML = 'helloss'
-        }}>dianyixia</button>
+        }}>dianyixia</button> */}
         <form onSubmit={(e) => { this.handleSubmit(e) }} >
           用户名：<input type='text' autoComplete='new-password' value={this.state.name || ''} onChange={(e) => { this.setState({ name: e.target.value,isStore:true }) }} />
           密码：<input type='password' autoComplete='new-password' value={this.state.pwd || ''} onChange={(e) => { this.setState({ pwd: e.target.value }) }} />

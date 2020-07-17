@@ -16,6 +16,7 @@ const App = lazy(()=>import('./App'))
     })
 }
 
+//修改 默认阻止页面跳转的modal
 const getUserConfirmation = (message,callback)=>{
     Modal.confirm({
         title:message,
